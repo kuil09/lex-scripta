@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lex Scripta Structurer</title>
+    <meta
+      name="description"
+      content="将对话、规划笔记和政策文字转换为结构化的Lex Scripta文档。"
+    />
+    <meta property="og:title" content="Lex Scripta Structurer" />
+    <meta
+      property="og:description"
+      content="把混乱笔记变成代理可以信任的rule tree的公开Agent Skill。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <meta
+      property="og:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Scripta Structurer" />
+    <meta
+      name="twitter:description"
+      content="把自然语言笔记转换成机器可读的Lex Scripta文档。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <link rel="canonical" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="en" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="ko" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="terminal-body">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Lex Scripta Structurer 首页">
+          <span class="brand-mark">LS</span>
+          <span class="brand-copy">
+            <strong>Lex Scripta Structurer</strong>
+            <span>公开Agent Skill</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#why">原因</a>
+          <a href="#structure">结构</a>
+          <a href="#example">示例</a>
+          <a href="#revisions">差分</a>
+          <a href="#install">安装</a>
+          <a href="https://github.com/kuil09/lex-scripta">GitHub</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Languages">
+          <a class="language-link" href="../" lang="en">EN</a>
+          <a class="language-link" href="../ko/" lang="ko">KO</a>
+          <a class="language-link" href="../ja/" lang="ja">JA</a>
+          <a class="language-link is-current" href="./" lang="zh-CN">ZH</a>
+        </div>
+      </header>
+
+      <main id="top" class="terminal-main">
+        <section class="split-section">
+          <div class="section-intro reveal">
+            <p class="command-label">$ git diff --side-by-side raw-note.md release-policy.md</p>
+            <h1 class="section-title">左边含糊，右边可执行。</h1>
+            <p class="section-summary">
+              把粗糙笔记变成规则路径。
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">立即安装</a>
+              <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                查看仓库
+              </a>
+            </div>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side raw-note.md release-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">原始笔记</span>
+                  <span class="pane-file">raw-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Beta 下月上线。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">注册先只收邮箱。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">手机验证以后再做。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">企业客户可能</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">负责人未定。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">Lex Scripta</span>
+                  <span class="pane-file">release-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Beta 发布目标为下个月。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    具体发布日期仍未确定。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">注册流程遵循邮箱优先规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    注册时只收集邮箱。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    手机验证延后处理。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        企业账户可能</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">发布负责人尚未指定。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="why">
+          <div class="section-intro reveal">
+            <p class="command-label">$ lex-scripta --guarantees</p>
+            <h2 class="section-title">原始笔记会丢什么，Lex Scripta 会保留什么。</h2>
+            <p class="section-summary">
+              自然语言不变，作用域固定。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --word-diff notes.md guarantees.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">会丢掉的东西</span>
+                  <span class="pane-file">failure-modes.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ informal note failure modes</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">日期看起来像已经确定。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">例外会脱离它真正修改的规则。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">负责人会埋进大段 prose 里。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">复核时必须重读整段文字。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-guarantee">
+                <div class="pane-header">
+                  <span class="pane-label">会留下的东西</span>
+                  <span class="pane-file">guarantees.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta guarantees</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">未定日期会保持未定。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">例外仍挂在正确的父规则下面。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">负责人会变成稳定的条款。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">复核可以逐行进行。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="structure">
+          <div class="section-intro reveal">
+            <p class="command-label">$ cat structure-rules.md skeleton.md</p>
+            <h2 class="section-title">Lex Scripta 是可读的规则树。</h2>
+            <p class="section-summary">
+              父行立规则，缩进绑定范围。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">cat structure-rules.md skeleton.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">结构规则</span>
+                  <span class="pane-file">structure-rules.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta document shape</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">一行只放一条父规则。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">缩进后的子行继承父规则范围。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">子行可以表达条件或例外。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">负责人和未定事项也保持为显式条款。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">空行用来分隔独立规则块。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">文档骨架</span>
+                  <span class="pane-file">skeleton.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">发布策略管理 Beta 注册规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    发布时间目标是下个月。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    具体日期仍未确定。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">注册先走邮箱优先规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    初期只收邮箱。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    手机验证延后处理。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        企业账号可能需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">设计由 Minji 负责。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">发布负责人仍未确定。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="shell-note reveal">不是扩展名，而是结构。</p>
+        </section>
+
+        <section class="split-section" id="example">
+          <div class="section-intro reveal">
+            <p class="command-label">$ cat planning-note.md | lex-scripta</p>
+            <h2 class="section-title">转换前后，并排查看。</h2>
+            <p class="section-summary">
+              同一份笔记，更清晰的结构。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side planning-note.md release-plan.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">转换前</span>
+                  <span class="pane-file">planning-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Beta 下个月发。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">注册先只收邮箱。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">手机验证以后再说。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">企业客户可能</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">设计由 Minji 负责。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">后端先做。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">转换后</span>
+                  <span class="pane-file">release-plan.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Beta 发布目标为下个月。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    具体发布日期仍未确定。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">注册流程遵循邮箱优先规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    注册时只收集邮箱。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    手机验证延后处理。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        企业账户可能</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">设计由 Minji 负责。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">后端实现先启动。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="shell-note reveal">未定就保持未定。</p>
+        </section>
+
+        <section class="split-section" id="revisions">
+          <div class="section-intro reveal">
+            <p class="command-label">$ git diff --side-by-side signup-policy.previous.md signup-policy.md</p>
+            <h2 class="section-title">左边旧版，右边新版。</h2>
+            <p class="section-summary">
+              路径稳定，差分就好读。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side signup-policy.previous.md signup-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-old">
+                <div class="pane-header">
+                  <span class="pane-label">旧版</span>
+                  <span class="pane-file">signup-policy.previous.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ signup-policy</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">Beta 发布目标为下个月。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">注册流程遵循最少信息原则。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">    手机验证不在首轮 beta 范围内。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">        企业客户可能需要公司邮箱验证。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-new">
+                <div class="pane-header">
+                  <span class="pane-label">新版</span>
+                  <span class="pane-file">signup-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ signup-policy</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">Beta 发布目标为下个月。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">注册流程遵循邮箱优先规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    企业账户必须进行手机验证。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        公司邮箱验证继续保留。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="legend reveal">
+            <span class="legend-old">旧规则</span>
+            <span class="legend-new">新规则</span>
+            <span class="legend-stable">稳定的行路径</span>
+          </p>
+        </section>
+
+        <section class="split-section" id="install">
+          <div class="section-intro reveal">
+            <p class="command-label">$ npx skills add kuil09/lex-scripta</p>
+            <h2 class="section-title">安装也放在同一屏。</h2>
+            <p class="section-summary">
+              默认安装在左，代理专用在右。
+            </p>
+          </div>
+
+          <div class="terminal-shell install-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">npx skills add kuil09/lex-scripta --skill lex-scripta-structurer</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-install-left">
+                <div class="pane-header">
+                  <span class="pane-label">默认安装</span>
+                  <span class="pane-file">install.md</span>
+                </div>
+                <div class="pane-body">
+                  <section class="command-card">
+                    <h3>默认安装</h3>
+                    <p>最短路径。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y"
+                      data-copy-default="复制命令"
+                      data-copy-success="已复制"
+                      data-copy-failure="复制失败"
+                    >
+                      复制命令
+                    </button>
+                  </section>
+
+                  <section class="path-card">
+                    <h3>手动复制</h3>
+                    <p class="path-note">直接复制 skill 文件夹。</p>
+                    <ul class="path-list">
+                      <li>大多数代理: <code>.agents/skills/lex-scripta-structurer</code></li>
+                      <li>Claude Code: <code>.claude/skills/lex-scripta-structurer</code></li>
+                    </ul>
+                  </section>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-install-right">
+                <div class="pane-header">
+                  <span class="pane-label">代理专用安装</span>
+                  <span class="pane-file">agents.md</span>
+                </div>
+                <div class="pane-body">
+                  <section class="command-card">
+                    <h3>Claude Code</h3>
+                    <p>本地安装。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent claude-code \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent claude-code --copy -y"
+                      data-copy-default="复制命令"
+                      data-copy-success="已复制"
+                      data-copy-failure="复制失败"
+                    >
+                      复制命令
+                    </button>
+                  </section>
+
+                  <section class="command-card">
+                    <h3>Cursor</h3>
+                    <p>本地安装。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent cursor \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent cursor --copy -y"
+                      data-copy-default="复制命令"
+                      data-copy-success="已复制"
+                      data-copy-failure="复制失败"
+                    >
+                      复制命令
+                    </button>
+                  </section>
+
+                  <section class="command-card">
+                    <h3>Gemini CLI</h3>
+                    <p>本地安装。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent gemini-cli \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent gemini-cli --copy -y"
+                      data-copy-default="复制命令"
+                      data-copy-success="已复制"
+                      data-copy-failure="复制失败"
+                    >
+                      复制命令
+                    </button>
+                  </section>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Lex Scripta Structurer</p>
+        <p>面向编码代理的规则文档结构。</p>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

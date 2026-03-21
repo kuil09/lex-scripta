@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lex Scripta Structurer</title>
+    <meta
+      name="description"
+      content="Turn conversations, planning notes, and policy prose into structured Lex Scripta documents."
+    />
+    <meta property="og:title" content="Lex Scripta Structurer" />
+    <meta
+      property="og:description"
+      content="A public Agent Skill for turning messy notes into rule trees your agent can trust."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuil09.github.io/lex-scripta/" />
+    <meta
+      property="og:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Scripta Structurer" />
+    <meta
+      name="twitter:description"
+      content="Turn natural-language notes into machine-readable Lex Scripta documents."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <link rel="canonical" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="en" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="ko" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="terminal-body">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Lex Scripta Structurer home">
+          <span class="brand-mark">LS</span>
+          <span class="brand-copy">
+            <strong>Lex Scripta Structurer</strong>
+            <span>Public Agent Skill</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#why">Why</a>
+          <a href="#structure">Structure</a>
+          <a href="#example">Example</a>
+          <a href="#revisions">Diff</a>
+          <a href="#install">Install</a>
+          <a href="https://github.com/kuil09/lex-scripta">GitHub</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Languages">
+          <a class="language-link is-current" href="./" lang="en">EN</a>
+          <a class="language-link" href="ko/" lang="ko">KO</a>
+          <a class="language-link" href="ja/" lang="ja">JA</a>
+          <a class="language-link" href="zh-cn/" lang="zh-CN">ZH</a>
+        </div>
+      </header>
+
+      <main id="top" class="terminal-main">
+        <section class="split-section">
+          <div class="section-intro reveal">
+            <p class="command-label">$ git diff --side-by-side raw-note.md release-policy.md</p>
+            <h1 class="section-title">Ambiguous on the left. Operational on the right.</h1>
+            <p class="section-summary">
+              Rough notes in. Rule paths out.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">Install the skill</a>
+              <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                View repository
+              </a>
+            </div>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side raw-note.md release-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">raw note</span>
+                  <span class="pane-file">raw-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Beta next month.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Email-only signup first.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Phone check later.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Enterprise may need</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">company email verification.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Release owner unknown.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">Lex Scripta</span>
+                  <span class="pane-file">release-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Beta release targets next month.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Exact ship date is still open.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Signup starts email-first.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Only email is collected.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Phone verification waits.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        Enterprise accounts may require</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        company email verification.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">The release owner is not yet assigned.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="why">
+          <div class="section-intro reveal">
+            <p class="command-label">$ lex-scripta --guarantees</p>
+            <h2 class="section-title">What raw notes lose. What Lex Scripta preserves.</h2>
+            <p class="section-summary">
+              Plain language, stable scope.
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --word-diff notes.md guarantees.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">what gets lost</span>
+                  <span class="pane-file">failure-modes.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ informal note failure modes</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">Timing sounds settled before it is settled.</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">Exceptions drift away from the rule they modify.</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">Ownership disappears into prose.</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">Review requires rereading the whole paragraph.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-guarantee">
+                <div class="pane-header">
+                  <span class="pane-label">what survives</span>
+                  <span class="pane-file">guarantees.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta guarantees</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Open dates stay open.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Exceptions stay under the correct parent.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Ownership becomes a stable clause.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Review can happen line by line.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="structure">
+          <div class="section-intro reveal">
+            <p class="command-label">$ cat structure-rules.md skeleton.md</p>
+            <h2 class="section-title">Lex Scripta is a rule tree you can read.</h2>
+            <p class="section-summary">
+              Parent lines rule. Indentation binds scope.
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">cat structure-rules.md skeleton.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">shape rules</span>
+                  <span class="pane-file">structure-rules.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta document shape</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">One parent statement per line.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">Indented children inherit the parent scope.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">Child lines may express conditions or exceptions.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">Ownership and open items stay as explicit clauses.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">Blank lines separate independent rule blocks.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">document skeleton</span>
+                  <span class="pane-file">skeleton.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Release policy governs beta signup.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Release target is next month.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Exact date is still open.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Signup starts email-first.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Only email is collected at first.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Phone verification is deferred.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        Enterprise accounts may require company email verification.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Design is owned by Minji.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Release owner remains open.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="shell-note reveal">Structure, not extension.</p>
+        </section>
+
+        <section class="split-section" id="example">
+          <div class="section-intro reveal">
+            <p class="command-label">$ cat planning-note.md | lex-scripta</p>
+            <h2 class="section-title">Before and after, side by side.</h2>
+            <p class="section-summary">
+              Same note. Sharper structure.
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side planning-note.md release-plan.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">before</span>
+                  <span class="pane-file">planning-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Ship beta next month.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Keep signup email-only.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Phone check later.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Enterprise may require</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">company email verification.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Minji owns design.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Backend starts first.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">after</span>
+                  <span class="pane-file">release-plan.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Beta is targeted for next month.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Exact ship date remains open.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Signup follows an email-first rule.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Only email is collected.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Phone verification is deferred.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        Enterprise accounts may require</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        company email verification.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Design is owned by Minji.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Backend delivery starts first.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="shell-note reveal">Unknowns stay unknown.</p>
+        </section>
+
+        <section class="split-section" id="revisions">
+          <div class="section-intro reveal">
+            <p class="command-label">$ git diff --side-by-side signup-policy.previous.md signup-policy.md</p>
+            <h2 class="section-title">Old file on the left. New file on the right.</h2>
+            <p class="section-summary">
+              Stable paths keep patches readable.
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side signup-policy.previous.md signup-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-old">
+                <div class="pane-header">
+                  <span class="pane-label">old</span>
+                  <span class="pane-file">signup-policy.previous.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ signup-policy</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">The beta release is targeted for next month.</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">The initial signup flow follows a minimum-information rule.</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">    Phone verification is excluded from the initial beta scope.</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">        Enterprise customers may require company email verification.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-new">
+                <div class="pane-header">
+                  <span class="pane-label">new</span>
+                  <span class="pane-file">signup-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ signup-policy</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">The beta release is targeted for next month.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">The initial signup flow follows an email-first rule.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    Phone verification is required for enterprise accounts.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        Company email verification remains required.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="legend reveal">
+            <span class="legend-old">old rule</span>
+            <span class="legend-new">new rule</span>
+            <span class="legend-stable">stable line path</span>
+          </p>
+        </section>
+
+        <section class="split-section" id="install">
+          <div class="section-intro reveal">
+            <p class="command-label">$ npx skills add kuil09/lex-scripta</p>
+            <h2 class="section-title">Install from one screen.</h2>
+            <p class="section-summary">
+              Default on the left. Per-agent on the right.
+            </p>
+          </div>
+
+          <div class="terminal-shell install-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">npx skills add kuil09/lex-scripta --skill lex-scripta-structurer</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-install-left">
+                <div class="pane-header">
+                  <span class="pane-label">default install</span>
+                  <span class="pane-file">install.md</span>
+                </div>
+                <div class="pane-body">
+                  <section class="command-card">
+                    <h3>Default install</h3>
+                    <p>Most users.</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y"
+                      data-copy-default="Copy command"
+                      data-copy-success="Copied"
+                      data-copy-failure="Copy failed"
+                    >
+                      Copy command
+                    </button>
+                  </section>
+
+                  <section class="path-card">
+                    <h3>Manual copy</h3>
+                    <p class="path-note">Copy the skill folder directly.</p>
+                    <ul class="path-list">
+                      <li>Most agents: <code>.agents/skills/lex-scripta-structurer</code></li>
+                      <li>Claude Code: <code>.claude/skills/lex-scripta-structurer</code></li>
+                    </ul>
+                  </section>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-install-right">
+                <div class="pane-header">
+                  <span class="pane-label">agent installs</span>
+                  <span class="pane-file">agents.md</span>
+                </div>
+                <div class="pane-body">
+                  <section class="command-card">
+                    <h3>Claude Code</h3>
+                    <p>Project-local.</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent claude-code \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent claude-code --copy -y"
+                      data-copy-default="Copy command"
+                      data-copy-success="Copied"
+                      data-copy-failure="Copy failed"
+                    >
+                      Copy command
+                    </button>
+                  </section>
+
+                  <section class="command-card">
+                    <h3>Cursor</h3>
+                    <p>Project-local.</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent cursor \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent cursor --copy -y"
+                      data-copy-default="Copy command"
+                      data-copy-success="Copied"
+                      data-copy-failure="Copy failed"
+                    >
+                      Copy command
+                    </button>
+                  </section>
+
+                  <section class="command-card">
+                    <h3>Gemini CLI</h3>
+                    <p>Project-local.</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent gemini-cli \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent gemini-cli --copy -y"
+                      data-copy-default="Copy command"
+                      data-copy-success="Copied"
+                      data-copy-failure="Copy failed"
+                    >
+                      Copy command
+                    </button>
+                  </section>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Lex Scripta Structurer</p>
+        <p>Structured rule writing for coding agents.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Lex Scripta Structurer</title>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c85a33" />
+      <stop offset="100%" stop-color="#f1bf64" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#13201d" />
+  <circle cx="64" cy="64" r="44" fill="url(#g)" />
+  <path d="M41 39h10v39h23v11H41V39Z" fill="#fff7ed" />
+  <path d="M73 39h14l-16 21 18 29H75L63 68l10-14Z" fill="#fff7ed" />
+</svg>

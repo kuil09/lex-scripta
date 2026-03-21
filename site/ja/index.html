@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lex Scripta Structurer</title>
+    <meta
+      name="description"
+      content="会話、企画メモ、ポリシー文を構造化されたLex Scripta文書に変換します。"
+    />
+    <meta property="og:title" content="Lex Scripta Structurer" />
+    <meta
+      property="og:description"
+      content="雑多なメモをエージェントが信頼できるrule treeへ変える公開Agent Skill。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuil09.github.io/lex-scripta/ja/" />
+    <meta
+      property="og:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Scripta Structurer" />
+    <meta
+      name="twitter:description"
+      content="自然言語のメモを機械が読めるLex Scripta文書に変換します。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <link rel="canonical" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="en" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="ko" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="terminal-body">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Lex Scripta Structurer ホーム">
+          <span class="brand-mark">LS</span>
+          <span class="brand-copy">
+            <strong>Lex Scripta Structurer</strong>
+            <span>公開Agent Skill</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#why">理由</a>
+          <a href="#structure">構造</a>
+          <a href="#example">例</a>
+          <a href="#revisions">差分</a>
+          <a href="#install">導入</a>
+          <a href="https://github.com/kuil09/lex-scripta">GitHub</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Languages">
+          <a class="language-link" href="../" lang="en">EN</a>
+          <a class="language-link" href="../ko/" lang="ko">KO</a>
+          <a class="language-link is-current" href="./" lang="ja">JA</a>
+          <a class="language-link" href="../zh-cn/" lang="zh-CN">ZH</a>
+        </div>
+      </header>
+
+      <main id="top" class="terminal-main">
+        <section class="split-section">
+          <div class="section-intro reveal">
+            <p class="command-label">$ git diff --side-by-side raw-note.md release-policy.md</p>
+            <h1 class="section-title">左は曖昧。右は実行可能。</h1>
+            <p class="section-summary">
+              粗いメモを規則の経路へ変える。
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">導入する</a>
+              <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                リポジトリを見る
+              </a>
+            </div>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side raw-note.md release-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">原文メモ</span>
+                  <span class="pane-file">raw-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">ベータは来月。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">登録はメールだけ先に。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">電話確認は後で。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">エンタープライズでは</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">会社メール確認が必要かもしれない。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">担当者は未定。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">Lex Scripta</span>
+                  <span class="pane-file">release-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">ベータ公開は来月を目標とする。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    正確な公開日は未確定である。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">登録はメール優先規則に従う。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    登録時に収集するのはメールのみである。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    電話確認は後ろへ送る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        エンタープライズアカウントでは</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        会社メール確認が必要な場合がある。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">公開担当者はまだ割り当てられていない。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="why">
+          <div class="section-intro reveal">
+            <p class="command-label">$ lex-scripta --guarantees</p>
+            <h2 class="section-title">失うものと、残るもの。</h2>
+            <p class="section-summary">
+              自然言語のまま、スコープだけを固定する。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --word-diff notes.md guarantees.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">失われるもの</span>
+                  <span class="pane-file">failure-modes.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ informal note failure modes</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">日付が確定したように見える。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">例外が修正対象の規則から離れる。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">担当者が文章の中に埋もれる。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">確認には段落全体の読み直しが必要になる。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-guarantee">
+                <div class="pane-header">
+                  <span class="pane-label">残るもの</span>
+                  <span class="pane-file">guarantees.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta guarantees</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">未確定の日付がそのまま残る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">例外が正しい親の下に残る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">担当者が安定した条項になる。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">レビューが行単位でできる。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="structure">
+          <div class="section-intro reveal">
+            <p class="command-label">$ cat structure-rules.md skeleton.md</p>
+            <h2 class="section-title">Lex Scripta は読める規則ツリー。</h2>
+            <p class="section-summary">
+              親行が規則を立て、字下げがスコープを束ねる。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">cat structure-rules.md skeleton.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">構造規則</span>
+                  <span class="pane-file">structure-rules.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta document shape</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">一行に一つの親規則を置く。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">字下げされた子行は親の範囲を継承する。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">子行は条件や例外を表せる。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">担当と未確定事項も明示的な条項として残す。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">空行は独立した規則ブロックを分ける。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">文書骨格</span>
+                  <span class="pane-file">skeleton.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">リリース方針はベータ登録規則を扱う。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    リリース目標時期は来月である。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    正確な日付はまだ未定である。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">登録はメール優先で始まる。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    初期段階ではメールのみ収集する。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    電話確認は後ろへ送る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        エンタープライズアカウントでは会社メール確認が必要な場合がある。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">デザイン担当は Minji である。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">リリース担当は未定のままである。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="shell-note reveal">拡張子ではなく、構造。</p>
+        </section>
+
+        <section class="split-section" id="example">
+          <div class="section-intro reveal">
+            <p class="command-label">$ cat planning-note.md | lex-scripta</p>
+            <h2 class="section-title">変換前と変換後を並べる。</h2>
+            <p class="section-summary">
+              同じメモを、より鋭い構造で見る。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side planning-note.md release-plan.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">変換前</span>
+                  <span class="pane-file">planning-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">ベータは来月に出す。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">登録はメールだけで始める。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">電話確認は後で。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">エンタープライズでは</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">会社メール確認が必要かもしれない。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">デザイン担当は Minji。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">バックエンドが先。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">変換後</span>
+                  <span class="pane-file">release-plan.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">ベータ公開は来月を目標とする。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    正確な公開日は未確定である。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">登録はメール優先規則に従う。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    登録時に収集するのはメールのみである。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    電話確認は後ろへ送る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        エンタープライズアカウントでは</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        会社メール確認が必要な場合がある。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">デザイン担当は Minji である。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">バックエンド実装が先に始まる。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="shell-note reveal">未確定は未確定のまま。</p>
+        </section>
+
+        <section class="split-section" id="revisions">
+          <div class="section-intro reveal">
+            <p class="command-label">$ git diff --side-by-side signup-policy.previous.md signup-policy.md</p>
+            <h2 class="section-title">左が旧版、右が新版。</h2>
+            <p class="section-summary">
+              規則の経路が固定されると、差分は読みやすい。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side signup-policy.previous.md signup-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-old">
+                <div class="pane-header">
+                  <span class="pane-label">旧版</span>
+                  <span class="pane-file">signup-policy.previous.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ signup-policy</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">ベータ公開は来月を目標とする。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">登録フローは最小情報原則に従う。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">    電話確認は初期ベータ範囲から除外される。</span></li>
+                    <li class="line-remove"><span class="line-sign">-</span><span class="line-text">        エンタープライズ顧客では会社メール確認が必要な場合がある。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-new">
+                <div class="pane-header">
+                  <span class="pane-label">新版</span>
+                  <span class="pane-file">signup-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ signup-policy</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">ベータ公開は来月を目標とする。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">登録フローはメール優先規則に従う。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    エンタープライズアカウントでは電話確認が必要である。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        会社メール確認は引き続き必要である。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="legend reveal">
+            <span class="legend-old">旧規則</span>
+            <span class="legend-new">新規則</span>
+            <span class="legend-stable">固定された行の経路</span>
+          </p>
+        </section>
+
+        <section class="split-section" id="install">
+          <div class="section-intro reveal">
+            <p class="command-label">$ npx skills add kuil09/lex-scripta</p>
+            <h2 class="section-title">導入も一画面で。</h2>
+            <p class="section-summary">
+              基本導入は左、エージェント別は右。
+            </p>
+          </div>
+
+          <div class="terminal-shell install-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">npx skills add kuil09/lex-scripta --skill lex-scripta-structurer</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-install-left">
+                <div class="pane-header">
+                  <span class="pane-label">基本導入</span>
+                  <span class="pane-file">install.md</span>
+                </div>
+                <div class="pane-body">
+                  <section class="command-card">
+                    <h3>基本導入</h3>
+                    <p>最短経路。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y"
+                      data-copy-default="コマンドをコピー"
+                      data-copy-success="コピー済み"
+                      data-copy-failure="コピー失敗"
+                    >
+                      コマンドをコピー
+                    </button>
+                  </section>
+
+                  <section class="path-card">
+                    <h3>手動コピー</h3>
+                    <p class="path-note">skill フォルダを直接コピー。</p>
+                    <ul class="path-list">
+                      <li>多くのエージェント: <code>.agents/skills/lex-scripta-structurer</code></li>
+                      <li>Claude Code: <code>.claude/skills/lex-scripta-structurer</code></li>
+                    </ul>
+                  </section>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-install-right">
+                <div class="pane-header">
+                  <span class="pane-label">エージェント別導入</span>
+                  <span class="pane-file">agents.md</span>
+                </div>
+                <div class="pane-body">
+                  <section class="command-card">
+                    <h3>Claude Code</h3>
+                    <p>ローカル導入。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent claude-code \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent claude-code --copy -y"
+                      data-copy-default="コマンドをコピー"
+                      data-copy-success="コピー済み"
+                      data-copy-failure="コピー失敗"
+                    >
+                      コマンドをコピー
+                    </button>
+                  </section>
+
+                  <section class="command-card">
+                    <h3>Cursor</h3>
+                    <p>ローカル導入。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent cursor \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent cursor --copy -y"
+                      data-copy-default="コマンドをコピー"
+                      data-copy-success="コピー済み"
+                      data-copy-failure="コピー失敗"
+                    >
+                      コマンドをコピー
+                    </button>
+                  </section>
+
+                  <section class="command-card">
+                    <h3>Gemini CLI</h3>
+                    <p>ローカル導入。</p>
+                    <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --agent gemini-cli \
+  --copy -y</code></pre>
+                    <button
+                      class="copy-button"
+                      data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent gemini-cli --copy -y"
+                      data-copy-default="コマンドをコピー"
+                      data-copy-success="コピー済み"
+                      data-copy-failure="コピー失敗"
+                    >
+                      コマンドをコピー
+                    </button>
+                  </section>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Lex Scripta Structurer</p>
+        <p>コーディングエージェントのための規則文書構造。</p>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
