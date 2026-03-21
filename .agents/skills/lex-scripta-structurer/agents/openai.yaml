@@ -1,0 +1,6 @@
+interface:
+  display_name: "Lex Scripta Structurer"
+  short_description: "Structure notes into Lex Scripta"
+  default_prompt: "Use $lex-scripta-structurer to convert these notes into a Lex Scripta document."
+policy:
+  allow_implicit_invocation: true
