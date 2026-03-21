@@ -8,33 +8,42 @@ Repository: `kuil09/lex-scripta`
 
 ## Quick Start
 
-### 1. Use it directly inside Codex
+### 1. Install it for most agents in one command
 
-Codex automatically scans `.agents/skills` from the current working directory up to the repository root. Clone this repository and open it in Codex to use the skill without any extra install step.
-
-### 2. Install it into Codex from GitHub
-
-Use Codex's built-in installer with the GitHub tree URL for the canonical skill directory:
+Use the `skills` CLI for the fastest project-local install:
 
 ```text
-$skill-installer install https://github.com/kuil09/lex-scripta/tree/main/.agents/skills/lex-scripta-structurer
+npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y
 ```
 
-Restart Codex after installation if the skill does not appear immediately.
+Add `--global` if you prefer a user-level install instead of a project-local install.
 
-### 3. Install it across supported agents
+### 2. Install it into a specific agent
 
-The open `skills` CLI scans `.agents/skills`, so the repository also works across supported agent runtimes:
+Claude Code:
 
 ```text
-npx skills add kuil09/lex-scripta --skill lex-scripta-structurer
+npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent claude-code --copy -y
 ```
 
-To target Codex explicitly:
+Cursor:
 
 ```text
-npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent codex
+npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent cursor --copy -y
 ```
+
+Gemini CLI:
+
+```text
+npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent gemini-cli --copy -y
+```
+
+### 3. Manual fallback paths
+
+If you do not want to use the `skills` CLI, copy the canonical skill folder into the target project manually:
+
+- Universal agents such as Codex, Cursor, and Gemini CLI: `.agents/skills/lex-scripta-structurer`
+- Claude Code: `.claude/skills/lex-scripta-structurer`
 
 ## What this repository includes
 
@@ -64,6 +73,38 @@ Lex Scripta keeps natural language readable while making the execution logic exp
 - child lines narrow scope, add conditions, define dependencies, or encode exceptions
 - missing facts are surfaced instead of invented
 - explanatory notes stay outside the rule body
+
+## What a Lex Scripta document looks like
+
+Lex Scripta is a document structure, not a special file extension.
+
+- a parent line states the governing rule
+- indented child lines inherit the parent scope
+- deeper indentation adds narrower conditions or exceptions
+- blank lines separate independent rule blocks
+
+Example:
+
+```text
+Beta signup policy governs early access.
+    Release target is next month.
+    Exact launch date is still open.
+
+Signup starts email-first.
+    Only email is collected at first.
+    Phone verification is deferred.
+        Enterprise accounts may require company email verification.
+
+Design is owned by Minji.
+Release owner remains open.
+```
+
+In that example:
+
+- `Beta signup policy governs early access.` is the parent statement
+- `Release target is next month.` and `Exact launch date is still open.` stay under that parent
+- `Enterprise accounts may require company email verification.` stays under the narrower `Phone verification is deferred.` branch
+- `Release owner remains open.` keeps uncertainty explicit instead of filling it in
 
 ## Repository layout
 
@@ -120,12 +161,13 @@ bash .github/scripts/package_release.sh 1.0.0 kuil09/lex-scripta /tmp/lex-script
 
 This repository is prepared for the public skill ecosystem in two ways:
 
-- `npx skills add kuil09/lex-scripta --skill lex-scripta-structurer` works because the canonical skill lives under `.agents/skills`.
+- `npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y` works because the canonical skill lives under `.agents/skills`.
 - [skills.sh](https://skills.sh/) visibility is driven by anonymous installation telemetry from the `skills` CLI, so public installs from this repository are the discovery mechanism.
 
 For manual catalog submissions or review-driven directories, see `docs/catalog-readiness-checklist.md`.
 
 ## Links
 
+- Website: [https://kuil09.github.io/lex-scripta/](https://kuil09.github.io/lex-scripta/)
 - GitHub: [https://github.com/kuil09/lex-scripta](https://github.com/kuil09/lex-scripta)
 - Releases: [https://github.com/kuil09/lex-scripta/releases](https://github.com/kuil09/lex-scripta/releases)

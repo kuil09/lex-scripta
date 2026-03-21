@@ -26,16 +26,35 @@ REQUIRED_FILES = [
     ROOT / "README.zh-CN.md",
     ROOT / "LICENSE",
     ROOT / "docs" / "catalog-readiness-checklist.md",
+    ROOT / "site" / "index.html",
+    ROOT / "site" / "ko" / "index.html",
+    ROOT / "site" / "ja" / "index.html",
+    ROOT / "site" / "zh-cn" / "index.html",
+    ROOT / "site" / "styles.css",
+    ROOT / "site" / "script.js",
+    ROOT / "site" / ".nojekyll",
+    ROOT / "site" / "favicon.svg",
+    ROOT / "site" / "og-card.svg",
     ROOT / ".github" / "workflows" / "release-skill.yml",
+    ROOT / ".github" / "workflows" / "deploy-pages.yml",
 ]
 README_SNIPPETS = [
     ".agents/skills/lex-scripta-structurer",
-    f"$skill-installer install https://github.com/{EXPECTED_REPO}/tree/main/.agents/skills/lex-scripta-structurer",
-    f"npx skills add {EXPECTED_REPO} --skill lex-scripta-structurer",
+    f"npx skills add {EXPECTED_REPO} --skill lex-scripta-structurer --copy -y",
+    f"npx skills add {EXPECTED_REPO} --skill lex-scripta-structurer --agent claude-code --copy -y",
+    f"npx skills add {EXPECTED_REPO} --skill lex-scripta-structurer --agent cursor --copy -y",
+    f"npx skills add {EXPECTED_REPO} --skill lex-scripta-structurer --agent gemini-cli --copy -y",
+    ".claude/skills/lex-scripta-structurer",
     "[한국어](README.ko.md)",
     "[日本語](README.ja.md)",
     "[简体中文](README.zh-CN.md)",
     "skills.sh",
+    "https://kuil09.github.io/lex-scripta/",
+]
+SITE_LOCALE_LINKS = [
+    'href="ko/"',
+    'href="ja/"',
+    'href="zh-cn/"',
 ]
 
 
@@ -117,6 +136,13 @@ def validate_readme(errors: list[str]) -> None:
             fail(f"README.md is missing installation guidance snippet: {snippet}", errors)
 
 
+def validate_site_localization(errors: list[str]) -> None:
+    text = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+    for snippet in SITE_LOCALE_LINKS:
+        if snippet not in text:
+            fail(f"site/index.html is missing locale link: {snippet}", errors)
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -129,6 +155,7 @@ def main() -> int:
     validate_skill_frontmatter(errors)
     validate_openai_yaml(errors)
     validate_readme(errors)
+    validate_site_localization(errors)
 
     if errors:
         for error in errors:
