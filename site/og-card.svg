@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
+  <title>Lex Scripta Structurer</title>
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7efe4" />
+      <stop offset="100%" stop-color="#f0e0c9" />
+    </linearGradient>
+    <linearGradient id="pill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c85a33" />
+      <stop offset="100%" stop-color="#f1bf64" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f5ebdc" />
+  <rect x="44" y="44" width="1112" height="542" rx="36" fill="url(#hero)" stroke="#dccab2" />
+  <circle cx="1020" cy="112" r="110" fill="#d6f0eb" opacity="0.55" />
+  <circle cx="156" cy="74" r="126" fill="#f8d8bb" opacity="0.45" />
+  <rect x="86" y="88" width="84" height="84" rx="22" fill="#13201d" />
+  <circle cx="128" cy="130" r="26" fill="url(#pill)" />
+  <text x="212" y="154" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#55605b">Public Agent Skill</text>
+  <text x="86" y="260" font-family="'Fraunces', serif" font-size="76" font-weight="700" fill="#13201d">
+    <tspan x="86" dy="0">Lex Scripta</tspan>
+    <tspan x="86" dy="86">Structurer</tspan>
+  </text>
+  <text x="86" y="412" font-family="'Space Grotesk', sans-serif" font-size="31" fill="#33413d">
+    <tspan x="86" dy="0">Turn conversations, planning notes, and</tspan>
+    <tspan x="86" dy="46">policy prose into structured Lex Scripta documents.</tspan>
+  </text>
+  <rect x="760" y="258" width="320" height="218" rx="26" fill="#13201d" />
+  <text x="792" y="314" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#f6ecdc">
+    <tspan x="792" dy="0">The initial signup flow</tspan>
+    <tspan x="792" dy="34">follows a minimum-</tspan>
+    <tspan x="792" dy="34">information rule.</tspan>
+    <tspan x="792" dy="34">    Only email is</tspan>
+    <tspan x="792" dy="34">    collected at signup.</tspan>
+  </text>
+</svg>

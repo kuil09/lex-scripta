@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lex Scripta Structurer</title>
+    <meta
+      name="description"
+      content="会話、企画メモ、ポリシー文を構造化されたLex Scripta文書に変換します。"
+    />
+    <meta property="og:title" content="Lex Scripta Structurer" />
+    <meta
+      property="og:description"
+      content="雑多なメモをエージェントが信頼できるrule treeへ変える公開Agent Skill。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuil09.github.io/lex-scripta/ja/" />
+    <meta
+      property="og:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Scripta Structurer" />
+    <meta
+      name="twitter:description"
+      content="自然言語のメモを機械が読めるLex Scripta文書に変換します。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <link rel="canonical" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="en" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="ko" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="terminal-body">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Lex Scripta Structurer ホーム">
+          <span class="brand-mark">LS</span>
+          <span class="brand-copy">
+            <strong>Lex Scripta Structurer</strong>
+            <span>公開Agent Skill</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="https://github.com/kuil09/lex-scripta">GitHub</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Languages">
+          <a class="language-link" href="../" lang="en">EN</a>
+          <a class="language-link" href="../ko/" lang="ko">KO</a>
+          <a class="language-link is-current" href="./" lang="ja">JA</a>
+          <a class="language-link" href="../zh-cn/" lang="zh-CN">ZH</a>
+        </div>
+      </header>
+
+      <main id="top" class="terminal-main">
+        <section class="split-section hero-section">
+          <div class="section-intro reveal">
+            <h1 class="section-title">左は曖昧。右は実行可能。</h1>
+            <p class="section-summary">
+              同じメモが、より明確な構造になる。
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">導入する</a>
+              <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                リポジトリを見る
+              </a>
+            </div>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side raw-note.md release-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">原文メモ</span>
+                  <span class="pane-file">raw-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">ベータは来月。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">登録はメールだけ先に。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">電話確認は後で。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">エンタープライズでは</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">会社メール確認が必要かもしれない。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">担当者は未定。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">Lex Scripta</span>
+                  <span class="pane-file">release-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">ベータ公開は来月を目標とする。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    正確な公開日は未確定である。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">登録はメール優先規則に従う。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    登録時に収集するのはメールのみである。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    電話確認は後ろへ送る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        エンタープライズアカウントでは</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        会社メール確認が必要な場合がある。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">公開担当者はまだ割り当てられていない。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="structure">
+          <div class="section-intro reveal">
+            <h2 class="section-title">Lex Scripta は意味を持つ字下げ。</h2>
+            <p class="section-summary">
+              親行、子の範囲、そして見える未確定事項。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">cat structure-rules.md skeleton.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">構造規則</span>
+                  <span class="pane-file">structure-rules.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta document shape</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">一行に一つの親規則を置く。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">字下げされた子行は親の範囲を継承する。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">子行は条件や例外を表せる。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">担当と未確定事項も明示的な条項として残す。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">空行は独立した規則ブロックを分ける。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">文書骨格</span>
+                  <span class="pane-file">skeleton.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">リリース方針はベータ登録規則を扱う。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    リリース目標時期は来月である。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    正確な日付はまだ未定である。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">登録はメール優先で始まる。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    初期段階ではメールのみ収集する。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    電話確認は後ろへ送る。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        エンタープライズアカウントでは会社メール確認が必要な場合がある。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">デザイン担当は Minji である。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">リリース担当は未定のままである。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="split-section install-strip" id="install">
+          <div class="section-intro reveal">
+            <h2 class="section-title">まず一行で試す。</h2>
+          </div>
+
+          <div class="terminal-shell install-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">npx skills add kuil09/lex-scripta --skill lex-scripta-structurer</span>
+            </div>
+
+            <article class="terminal-pane pane-install-full">
+              <div class="pane-header">
+                <span class="pane-label">基本導入</span>
+                <span class="pane-file">install.md</span>
+              </div>
+              <div class="pane-body install-strip-body">
+                <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --copy -y</code></pre>
+                <div class="install-strip-actions">
+                  <button
+                    class="copy-button"
+                    data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y"
+                    data-copy-default="コマンドをコピー"
+                    data-copy-success="コピー済み"
+                    data-copy-failure="コピー失敗"
+                  >
+                    コマンドをコピー
+                  </button>
+                  <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                    リポジトリを見る
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Lex Scripta Structurer</p>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

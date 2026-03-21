@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lex Scripta Structurer</title>
+    <meta
+      name="description"
+      content="将对话、规划笔记和政策文字转换为结构化的Lex Scripta文档。"
+    />
+    <meta property="og:title" content="Lex Scripta Structurer" />
+    <meta
+      property="og:description"
+      content="把混乱笔记变成代理可以信任的rule tree的公开Agent Skill。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <meta
+      property="og:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Scripta Structurer" />
+    <meta
+      name="twitter:description"
+      content="把自然语言笔记转换成机器可读的Lex Scripta文档。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <link rel="canonical" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="en" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="ko" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="terminal-body">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Lex Scripta Structurer 首页">
+          <span class="brand-mark">LS</span>
+          <span class="brand-copy">
+            <strong>Lex Scripta Structurer</strong>
+            <span>公开Agent Skill</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="https://github.com/kuil09/lex-scripta">GitHub</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Languages">
+          <a class="language-link" href="../" lang="en">EN</a>
+          <a class="language-link" href="../ko/" lang="ko">KO</a>
+          <a class="language-link" href="../ja/" lang="ja">JA</a>
+          <a class="language-link is-current" href="./" lang="zh-CN">ZH</a>
+        </div>
+      </header>
+
+      <main id="top" class="terminal-main">
+        <section class="split-section hero-section">
+          <div class="section-intro reveal">
+            <h1 class="section-title">左边含糊，右边可执行。</h1>
+            <p class="section-summary">
+              同一份笔记，变成清晰结构。
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">立即安装</a>
+              <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                查看仓库
+              </a>
+            </div>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side raw-note.md release-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">原始笔记</span>
+                  <span class="pane-file">raw-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">Beta 下月上线。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">注册先只收邮箱。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">手机验证以后再做。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">企业客户可能</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">负责人未定。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">Lex Scripta</span>
+                  <span class="pane-file">release-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">Beta 发布目标为下个月。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    具体发布日期仍未确定。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">注册流程遵循邮箱优先规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    注册时只收集邮箱。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    手机验证延后处理。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        企业账户可能</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">发布负责人尚未指定。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="structure">
+          <div class="section-intro reveal">
+            <h2 class="section-title">Lex Scripta 是带语义的缩进。</h2>
+            <p class="section-summary">
+              父行、子范围，以及显式保留的未定信息。
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">cat structure-rules.md skeleton.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">结构规则</span>
+                  <span class="pane-file">structure-rules.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta document shape</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">一行只放一条父规则。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">缩进后的子行继承父规则范围。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">子行可以表达条件或例外。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">负责人和未定事项也保持为显式条款。</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">空行用来分隔独立规则块。</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">文档骨架</span>
+                  <span class="pane-file">skeleton.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">发布策略管理 Beta 注册规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    发布时间目标是下个月。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    具体日期仍未确定。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">注册先走邮箱优先规则。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    初期只收邮箱。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    手机验证延后处理。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        企业账号可能需要公司邮箱验证。</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">设计由 Minji 负责。</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">发布负责人仍未确定。</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="split-section install-strip" id="install">
+          <div class="section-intro reveal">
+            <h2 class="section-title">先用一条命令试试。</h2>
+          </div>
+
+          <div class="terminal-shell install-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">npx skills add kuil09/lex-scripta --skill lex-scripta-structurer</span>
+            </div>
+
+            <article class="terminal-pane pane-install-full">
+              <div class="pane-header">
+                <span class="pane-label">默认安装</span>
+                <span class="pane-file">install.md</span>
+              </div>
+              <div class="pane-body install-strip-body">
+                <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --copy -y</code></pre>
+                <div class="install-strip-actions">
+                  <button
+                    class="copy-button"
+                    data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y"
+                    data-copy-default="复制命令"
+                    data-copy-success="已复制"
+                    data-copy-failure="复制失败"
+                  >
+                    复制命令
+                  </button>
+                  <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                    查看仓库
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Lex Scripta Structurer</p>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

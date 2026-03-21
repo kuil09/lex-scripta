@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lex Scripta Structurer</title>
+    <meta
+      name="description"
+      content="대화, 기획 메모, 정책 문서를 구조화된 Lex Scripta 문서로 바꾸세요."
+    />
+    <meta property="og:title" content="Lex Scripta Structurer" />
+    <meta
+      property="og:description"
+      content="복잡한 메모를 에이전트가 신뢰할 수 있는 rule tree로 바꾸는 공개 Agent Skill."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kuil09.github.io/lex-scripta/ko/" />
+    <meta
+      property="og:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Scripta Structurer" />
+    <meta
+      name="twitter:description"
+      content="자연어 메모를 기계가 읽을 수 있는 Lex Scripta 문서로 바꾸세요."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kuil09.github.io/lex-scripta/og-card.svg"
+    />
+    <link rel="canonical" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="en" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="alternate" hreflang="ko" href="https://kuil09.github.io/lex-scripta/ko/" />
+    <link rel="alternate" hreflang="ja" href="https://kuil09.github.io/lex-scripta/ja/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kuil09.github.io/lex-scripta/zh-cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://kuil09.github.io/lex-scripta/" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="terminal-body">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Lex Scripta Structurer 홈">
+          <span class="brand-mark">LS</span>
+          <span class="brand-copy">
+            <strong>Lex Scripta Structurer</strong>
+            <span>공개 Agent Skill</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="https://github.com/kuil09/lex-scripta">GitHub</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Languages">
+          <a class="language-link" href="../" lang="en">EN</a>
+          <a class="language-link is-current" href="./" lang="ko">KO</a>
+          <a class="language-link" href="../ja/" lang="ja">JA</a>
+          <a class="language-link" href="../zh-cn/" lang="zh-CN">ZH</a>
+        </div>
+      </header>
+
+      <main id="top" class="terminal-main">
+        <section class="split-section hero-section">
+          <div class="section-intro reveal">
+            <h1 class="section-title">왼쪽은 모호하고, 오른쪽은 실행됩니다.</h1>
+            <p class="section-summary">
+              같은 메모가 더 분명한 구조가 됩니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">설치하기</a>
+              <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                저장소 보기
+              </a>
+            </div>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">git diff --side-by-side raw-note.md release-policy.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-raw">
+                <div class="pane-header">
+                  <span class="pane-label">원본 메모</span>
+                  <span class="pane-file">raw-note.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">베타는 다음 달 목표.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">가입은 이메일만 먼저.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">전화번호 확인은 나중.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">엔터프라이즈는</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">회사 이메일 확인이 필요할 수 있음.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text">출시 담당자는 미정.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">Lex Scripta</span>
+                  <span class="pane-file">release-policy.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">베타 출시는 다음 달을 목표로 한다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    정확한 출시 날짜는 아직 미정이다.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">가입은 이메일 우선 규칙을 따른다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    가입 시에는 이메일만 수집한다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    전화번호 확인은 뒤로 미룬다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        엔터프라이즈 계정에는</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        회사 이메일 확인이 필요할 수 있다.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">출시 담당자는 아직 지정되지 않았다.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="split-section" id="structure">
+          <div class="section-intro reveal">
+            <h2 class="section-title">Lex Scripta는 의미 있는 들여쓰기입니다.</h2>
+            <p class="section-summary">
+              부모 줄, 하위 범위, 그리고 드러난 미정 정보.
+            </p>
+          </div>
+
+          <div class="terminal-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">cat structure-rules.md skeleton.md</span>
+            </div>
+
+            <div class="pane-grid">
+              <article class="terminal-pane pane-problem">
+                <div class="pane-header">
+                  <span class="pane-label">구조 규칙</span>
+                  <span class="pane-file">structure-rules.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-meta"><span class="line-sign">@</span><span class="line-text">@@ Lex Scripta 문서 구조</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">한 줄에는 하나의 부모 규칙을 둡니다.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">들여쓴 하위 줄은 부모 범위를 상속합니다.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">하위 줄은 조건이나 예외를 표현할 수 있습니다.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">담당자와 미정 항목도 명시적 조항으로 남깁니다.</span></li>
+                    <li class="line-context"><span class="line-sign"></span><span class="line-text">빈 줄은 독립된 규칙 블록을 나눕니다.</span></li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="terminal-pane pane-structured">
+                <div class="pane-header">
+                  <span class="pane-label">문서 골격</span>
+                  <span class="pane-file">skeleton.md</span>
+                </div>
+                <div class="pane-body">
+                  <ol class="code-lines">
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">출시 정책은 베타 가입 규칙을 다룬다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    출시 목표 시점은 다음 달이다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    정확한 날짜는 아직 미정이다.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">가입은 이메일 우선으로 시작한다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    초기에 이메일만 수집한다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">    전화번호 확인은 뒤로 미룬다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">        엔터프라이즈 계정에는 회사 이메일 확인이 필요할 수 있다.</span></li>
+                    <li class="line-plain"><span class="line-sign"></span><span class="line-text"></span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">디자인 담당은 민지다.</span></li>
+                    <li class="line-add"><span class="line-sign">+</span><span class="line-text">출시 담당자는 아직 미정이다.</span></li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="split-section install-strip" id="install">
+          <div class="section-intro reveal">
+            <h2 class="section-title">한 줄로 바로 써보세요.</h2>
+          </div>
+
+          <div class="terminal-shell install-shell reveal">
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="terminal-title">npx skills add kuil09/lex-scripta --skill lex-scripta-structurer</span>
+            </div>
+
+            <article class="terminal-pane pane-install-full">
+              <div class="pane-header">
+                <span class="pane-label">기본 설치</span>
+                <span class="pane-file">install.md</span>
+              </div>
+              <div class="pane-body install-strip-body">
+                <pre class="command-code"><code>npx skills add kuil09/lex-scripta \
+  --skill lex-scripta-structurer \
+  --copy -y</code></pre>
+                <div class="install-strip-actions">
+                  <button
+                    class="copy-button"
+                    data-copy="npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y"
+                    data-copy-default="명령 복사"
+                    data-copy-success="복사됨"
+                    data-copy-failure="복사 실패"
+                  >
+                    명령 복사
+                  </button>
+                  <a class="button button-secondary" href="https://github.com/kuil09/lex-scripta">
+                    저장소 보기
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Lex Scripta Structurer</p>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
