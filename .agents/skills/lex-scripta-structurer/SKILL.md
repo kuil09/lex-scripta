@@ -88,6 +88,8 @@ Produce the document in this exact section order:
 6. `Evidence / Notes`
 7. `Risks / Conflicts`
 
+Include an optional `Org Scope` section between `Purpose` and `Defined Terms` when the document belongs to a known organizational hierarchy. Omit it when no org hierarchy exists.
+
 Render `Lex Scripta Body` inside a fenced `text` block to preserve indentation.
 
 Use this skeleton:
@@ -97,6 +99,10 @@ Use this skeleton:
 
 ## 1. Purpose
 <One or two sentences>
+
+## 0. Org Scope *(optional — include when an org hierarchy exists)*
+- Org Unit: <path from root to owning unit, e.g. Engineering > Backend>
+- Audience: [<other org units that must act on this document>]
 
 ## 2. Defined Terms
 - <term>: <definition>
@@ -218,3 +224,4 @@ Backend implementation is sequenced before dependent work.
 - [Examples](references/EXAMPLES.md)
 - [Output checklist](references/OUTPUT-CHECKLIST.md)
 - [Reusable output template](assets/output-template.md)
+- [Org Auditor skill](../../lex-scripta-org-auditor/SKILL.md) — audit documents against an org hierarchy to detect misplaced content and cross-org gaps
