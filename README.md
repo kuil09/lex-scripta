@@ -1,58 +1,72 @@
-# Lex Scripta Structurer
+# Lex Scripta
 
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
-Lex Scripta Structurer is a public Agent Skill for turning conversations, meeting notes, planning drafts, and policy prose into structured Lex Scripta documents.
+Lex Scripta is a collection of public Agent Skills for structuring natural language into machine-readable rule trees and auditing that content against organizational hierarchies.
 
 Repository: `kuil09/lex-scripta`
 
+## Skills
+
+| Skill | Purpose |
+| --- | --- |
+| `lex-scripta-structurer` | Convert conversations, notes, and policy prose into structured Lex Scripta documents |
+| `lex-scripta-org-auditor` | Audit Lex Scripta documents against an org hierarchy to detect misplaced content, cross-org dependencies, and policy gaps |
+
 ## Quick Start
 
-### 1. Install it for most agents in one command
+### 1. Install a skill for most agents in one command
 
 Use the `skills` CLI for the fastest project-local install:
 
 ```text
 npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --copy -y
+npx skills add kuil09/lex-scripta --skill lex-scripta-org-auditor --copy -y
 ```
 
 Add `--global` if you prefer a user-level install instead of a project-local install.
 
-### 2. Install it into a specific agent
+### 2. Install into a specific agent
 
 Claude Code:
 
 ```text
 npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent claude-code --copy -y
+npx skills add kuil09/lex-scripta --skill lex-scripta-org-auditor --agent claude-code --copy -y
 ```
 
 Cursor:
 
 ```text
 npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent cursor --copy -y
+npx skills add kuil09/lex-scripta --skill lex-scripta-org-auditor --agent cursor --copy -y
 ```
 
 Gemini CLI:
 
 ```text
 npx skills add kuil09/lex-scripta --skill lex-scripta-structurer --agent gemini-cli --copy -y
+npx skills add kuil09/lex-scripta --skill lex-scripta-org-auditor --agent gemini-cli --copy -y
 ```
 
 ### 3. Manual fallback paths
 
-If you do not want to use the `skills` CLI, copy the canonical skill folder into the target project manually:
+If you do not want to use the `skills` CLI, copy the canonical skill folders into the target project manually:
 
-- Universal agents such as Codex, Cursor, and Gemini CLI: `.agents/skills/lex-scripta-structurer`
-- Claude Code: `.claude/skills/lex-scripta-structurer`
+- Universal agents such as Codex, Cursor, and Gemini CLI: `.agents/skills/lex-scripta-structurer`, `.agents/skills/lex-scripta-org-auditor`
+- Claude Code: `.claude/skills/lex-scripta-structurer`, `.claude/skills/lex-scripta-org-auditor`
 
 ## What this repository includes
 
-- `.agents/skills/lex-scripta-structurer/` is the canonical installable skill package.
+- `.agents/skills/lex-scripta-structurer/` — the structurer skill package
+- `.agents/skills/lex-scripta-org-auditor/` — the org auditor skill package
 - `.github/scripts/validate_skill.py` validates the public packaging contract.
 - `.github/workflows/release-skill.yml` builds release artifacts for tagged versions.
 - `docs/catalog-readiness-checklist.md` tracks readiness for review-driven catalogs and public distribution.
 
-## When to use the skill
+## When to use each skill
+
+### lex-scripta-structurer
 
 Use Lex Scripta Structurer when you need to convert any of the following into a machine-readable rule tree without losing the original meaning:
 
@@ -62,6 +76,18 @@ Use Lex Scripta Structurer when you need to convert any of the following into a 
 - requirement drafts
 - policy prose
 - mixed action items and open questions
+
+### lex-scripta-org-auditor
+
+Use Lex Scripta Org Auditor after documents have been structured when you need to:
+
+- verify that documents are owned by the correct org unit
+- identify statements that belong to a parent, sibling, or child unit
+- find cross-org obligations that are missing from the relevant unit's documents
+- detect parent-level policy gaps that child documents depend on
+- prepare a content audit before merging or redistributing structured documents
+
+The auditor takes an Org Map (an indentation-based org hierarchy in Lex Scripta format) and one or more Lex Scripta documents with `Org Scope` declarations. It produces a structured report listing each issue and a prioritized set of recommendations.
 
 ## Why the format works
 
@@ -128,6 +154,15 @@ lex-scripta/
                     OUTPUT-CHECKLIST.md
                 assets/
                     output-template.md
+            lex-scripta-org-auditor/
+                SKILL.md
+                agents/
+                    openai.yaml
+                references/
+                    REFERENCE.md
+                    EXAMPLES.md
+                assets/
+                    org-map-template.md
     .github/
         scripts/
         workflows/

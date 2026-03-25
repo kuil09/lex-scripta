@@ -1,0 +1,6 @@
+interface:
+  display_name: "Lex Scripta Org Auditor"
+  short_description: "Audit Lex Scripta documents against an org hierarchy"
+  default_prompt: "Use $lex-scripta-org-auditor to audit these documents against the org map and identify misplaced statements, cross-org dependencies, and hierarchy gaps."
+policy:
+  allow_implicit_invocation: false

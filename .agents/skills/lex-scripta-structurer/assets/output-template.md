@@ -3,6 +3,10 @@
 ## 1. Purpose
 <Write one or two sentences that define the scope and intent of the document.>
 
+## 0. Org Scope *(optional — include when an org hierarchy exists)*
+- Org Unit: <path from root to owning unit, e.g. Engineering > Backend>
+- Audience: [<other org units that must act on this document — omit if none>]
+
 ## 2. Defined Terms
 - <term>: <definition>
 - If there are no special terms, write `- None.`
@@ -36,3 +40,5 @@
 - Keep one claim per line.
 - Do not guess missing facts.
 - Use `[Unspecified]` or `[Needs confirmation]` when needed.
+- `Org Scope` is optional. Include it when the document belongs to a known org hierarchy. Omit it otherwise.
+- Use the `lex-scripta-org-auditor` skill to verify org placement after documents are created.
